@@ -1,6 +1,6 @@
 # TeslaTimeout
 
-**TODO: Add description**
+A Timeout Middleware for Tesla Elixir HTTP Client
 
 ## Installation
 
