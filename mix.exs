@@ -18,11 +18,11 @@ defmodule TeslaTimeout.Mixfile do
       homepage_url: @project_url,
       package: package(),
       test_coverage: [tool: ExCoveralls],
-      name: "TeslaTimeout"
+      name: "TeslaTimeout",
       docs: [
         main: "TeslaTimeout",
         source_url: @project_url
-      ]
+      ],
       deps: deps()
     ]
   end
@@ -37,10 +37,11 @@ defmodule TeslaTimeout.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:tesla, "~> 0.7.1", only: [:docs, :dev, :test]},
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:tesla, "~> 0.7.1", only: :test},
       {:mock, "~> 0.3.1", only: :test},
-      {:excoveralls, "~> 0.7", only: :test}
+      {:excoveralls, "~> 0.7", only: :test},
+      {:inch_ex, only: :docs}
     ]
   end
 
