@@ -1,12 +1,28 @@
 defmodule TeslaTimeout.Mixfile do
   use Mix.Project
 
+  @description """
+  TeslaTimeout is a middleware for Elixir Tesla HTTP Client
+  """
+
+  @project_url "https://github.com/globocom/tesla_middleware"
+
   def project do
     [
       app: :tesla_timeout,
       version: "0.1.0",
       elixir: "~> 1.4",
       start_permanent: Mix.env == :prod,
+      description: @description,
+      source_url: @project_url,
+      homepage_url: @project_url,
+      package: package(),
+      test_coverage: [tool: ExCoveralls],
+      name: "TeslaTimeout"
+      docs: [
+        main: "TeslaTimeout",
+        source_url: @project_url
+      ]
       deps: deps()
     ]
   end
@@ -21,10 +37,20 @@ defmodule TeslaTimeout.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:ex_doc, ">= 0.0.0", only: :dev},
       {:tesla, "~> 0.7.1", only: :test},
-      {:mock, "~> 0.3.1", only: :test}
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
+      {:mock, "~> 0.3.1", only: :test},
+      {:excoveralls, "~> 0.7", only: :test}
+    ]
+  end
+
+  defp package do
+    [
+      name: "Tesla Timeout Middleware",
+      maintainers: ["Globo.com"],
+      licenses: ["MIT"],
+      organization: "globocom",
+      links: %{"GitHub" => "https://github.com/globocom/tesla_timeout"}
     ]
   end
 end
