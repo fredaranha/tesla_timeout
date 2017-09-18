@@ -1,13 +1,8 @@
-# App artifacts
 /_build
-/db
+/cover
 /deps
-/*.ez
-
-# Generated on crash by the VM
+/doc
+/docs
 erl_crash.dump
-log/*
+*.ez
 .DS_Store
-.tool-versions-*
-
-cover/*
