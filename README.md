@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-	A Timeout Middleware for Tesla Elixir HTTP Client
+  A Timeout Middleware for Tesla Elixir HTTP Client
 </p>
 
 <p align="center">
@@ -17,10 +17,10 @@
   </a>
 </p>
 
-## Installation
+## About
+The timeout configuration may vary depending of the Tesla adapter being used (as well as its effects). To have an assertive and unified way of controlling timeout, we created this middleware that encapsulates the request on a GenServer with timeout. With this implementation we make sure that the timeout is always respected independent of the troubles the client may have.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `tesla_timeout` to your list of dependencies in `mix.exs`:
+## Installation
 
 ```elixir
 def deps do
@@ -30,7 +30,21 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/tesla_timeout](https://hexdocs.pm/tesla_timeout).
+## Usage:
 
+```elixir
+defmodule GoogleClient do
+  use Tesla
+  plug Tesla.Middleware.Timeout, :timer.seconds(2)
+end
+
+try do
+  GoogleClient.get("http://www.google.com:81/")
+rescue e in Tesla.Error ->
+  IO.inspect(e)
+end
+#  %Tesla.Error{
+#    message: "Elixir.Tesla.Middleware.Timeout: Request timeout.",
+#    reason: :timeout
+#  }
+```
