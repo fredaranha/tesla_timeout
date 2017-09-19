@@ -1,6 +1,21 @@
-# TeslaTimeout
+<h1 align="center">Tesla Timeout</h1>
 
-A Timeout Middleware for Tesla Elixir HTTP Client
+<p align="center">
+  <img alt="Tesla Timeout" src="https://github.com/globocom/tesla_timeout/blob/master/assets/tesla_timeout.png?raw=true" width="256">
+</p>
+
+<p align="center">
+	A Timeout Middleware for Tesla Elixir HTTP Client
+</p>
+
+<p align="center">
+  <a href="https://travis-ci.org/globocom/tesla_timeout">
+    <img alt="Travis" src="https://travis-ci.org/globocom/tesla_timeout.svg">
+  </a>
+  <a href="https://hex.pm/packages/tesla_timeout">
+    <img alt="Hex" src="https://img.shields.io/hexpm/dt/tesla_timeout.svg">
+  </a>
+</p>
 
 ## Installation
 
