@@ -50,7 +50,6 @@ defmodule TeslaTimeout.Mixfile do
       name: "Tesla Timeout Middleware",
       maintainers: ["Globo.com"],
       licenses: ["MIT"],
-      organization: "globocom",
       links: %{"GitHub" => "https://github.com/globocom/tesla_timeout"}
     ]
   end
