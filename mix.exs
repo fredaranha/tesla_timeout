@@ -10,7 +10,7 @@ defmodule TeslaTimeout.Mixfile do
   def project do
     [
       app: :tesla_timeout,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.4",
       start_permanent: Mix.env == :prod,
       description: @description,
@@ -37,7 +37,7 @@ defmodule TeslaTimeout.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:tesla, "~> 0.7.1", only: [:docs, :dev, :test]},
+      {:tesla, "~> 0.7.1"},
       {:ex_doc, ">= 0.0.0", only: :dev},
       {:mock, "~> 0.3.1", only: :test},
       {:excoveralls, "~> 0.7", only: :test},
@@ -47,7 +47,6 @@ defmodule TeslaTimeout.Mixfile do
 
   defp package do
     [
-      name: "Tesla Timeout Middleware",
       maintainers: ["Globo.com"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/globocom/tesla_timeout"}
